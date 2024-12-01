@@ -42,7 +42,7 @@
 
 </script>
 
-<Dialog dialogDisabeld={isNew?false:!$transport.result&&!$page.params.id?true:false} actionTitle={$page.params.id||!!idPage?'create':'save'}  cancelOnclick={disableActon} actonOnclick={saveTransport} {actionDisabeld} title="{$page.params.id||!!idPage?'Create new':'Save'} transport">
+<Dialog dialogDisabeld={isNew?false:!$transport.result&&!$page.params.id?true:false} actionTitle={$page.params.id||!!idPage?'create':'save'}  cancelOnclick={disableActon} actonOnclick={saveTransport} {actionDisabeld} title="{$page.params.id?'Create new':'Save'} transport">
     <FormLabel slot="content" label="name" >
     <Input id="name" bind:value={saveValue} on:input={e=> {
         if(e.currentTarget.value) return actionDisabeld=false
