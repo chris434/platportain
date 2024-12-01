@@ -1,0 +1,1 @@
+export const TRANSPORT_TYPES=['trolly','trailer','wooden create'] as const
