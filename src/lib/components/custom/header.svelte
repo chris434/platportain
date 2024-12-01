@@ -16,6 +16,7 @@ const {editName}=transport
     let resetCall=false
     let screenWidth=0
 $:id =$page.params.id
+$:id,menuToggle=true
     let name:string|null=$transport.name
 
     function handleDeleteTransport(){
@@ -57,7 +58,7 @@ $:id =$page.params.id
         {/if}
     </div>
 {#if menuToggle|| screenWidth>510}
-<ResultBar bind:resetCall/> 
+<ResultBar bind:menuToggle bind:resetCall/> 
 {/if}
    
     

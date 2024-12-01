@@ -14,6 +14,8 @@
 	import { browser } from "$app/environment";
 	import { TRANSPORT_TYPES } from "../data/transportTypes";
     export let resetCall=false
+    export  let menuToggle:boolean
+
     const transport=getTransport()
 const {calculate,resetTransport}=transport
  let transportType:transportTypes=$transport.transportType||'trolly'
@@ -25,7 +27,6 @@ const {calculate,resetTransport}=transport
    let trailerPotSize=transportType!=='trailer'?'2ltr': potSize
    let cratePotSize=transportType!=='wooden create'?'2ltr D':potSize
    let potCover:potCover='barke'
-    let menuToggle=true
 
     $: if(resetCall){
         reset()
@@ -44,6 +45,7 @@ const {calculate,resetTransport}=transport
     
     function handleSubmit() {
        calculate(plantQuanity,shelvesPerTrolly,transportType,potCover,potSize)
+       menuToggle=false
     }
 
 </script>
